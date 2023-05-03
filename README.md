@@ -1,2 +1,1 @@
 # famongskomik
-# famongskomik.github.io
