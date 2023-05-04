@@ -73,7 +73,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-.navbar-nav a {
+.navbar .navbar-nav a {
     display: flex;
     align-items: center;
     color: #222;
@@ -82,30 +82,45 @@ body {
     margin: 0 10px;
     font-size: 12px;
 }
+.navbar .navbar-nav a:hover {
+    content: '';
+    display: block;
+    border-bottom: 2px solid coral;
+    padding-bottom: 10px;
+    transition: 0.2s;
+
+}
+
+.navbar-nav .active {
+    font-weight: bold; /* memberikan tebal pada teks */
+    color: coral; /* mengubah warna teks menjadi merah */
+    border-bottom: 2px solid coral;
+    height: 30px;
+    padding-bottom: 10px;
+}
+
 
 /* Navbar-Abjad */
-.container-abjd {
+/* .container-abjd {
     display: flex;
     position: fixed;
-    /* left: 50%; */
+    left: 50%;
     left: 0;
     right: 0;
     top: 50px;
     scroll-behavior: smooth;
-    /* transform: translate(-50%, -50%); */
+    transform: translate(-50%, -50%);
     overflow: hidden;
     white-space: nowrap;
     background-color: #fff;
     z-index: 100;
-    }
-    
+    }   
     .nav-abjad {
     margin: 10px auto;
     display: inline-block;
     font-size: medium;
     justify-content: space-between;
-    }
-    
+    }  
     .nav-abjad a {
         display: inline-block;
         text-decoration: none;
@@ -114,7 +129,6 @@ body {
         font-size: large;
         justify-content: space-between;
         overflow-x: auto;
-        scr
     }
     :target:before {
         content: "";
@@ -125,7 +139,7 @@ body {
 
     .nav-abjad a:hover {
         color: coral;
-    }
+    } */
 
 /* Konten */
 .konten {
@@ -225,7 +239,7 @@ h2 span {
 
 .top-view .gambar {
     position: relative;
-    width: 40%;
+    width: 30%;
 }
 
 .top-view .gambar img {
@@ -316,7 +330,7 @@ h2 span {
     align-content: flex-start;
     max-width: 900px;
     flex-direction: column;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 .list-judul {
     margin: 20px 0;
@@ -346,6 +360,13 @@ h2 span {
 }
 .list-komik .comic-items .tittle {
     text-align: center;
+}
+
+/* favorit */
+.navbar-htyfav {
+    display: flex;
+    max-width: 900px;
+    margin: ;
 }
 @media screen and (min-width: 1025px) {
 .navbar .navbar-nav a ion-icon {
@@ -400,9 +421,9 @@ h2 span {
   /* Navbar End */
 
   /* Navbar Abjad */
-.container-abjd {
+/* .container-abjd {
     overflow-x: auto;
-}
+} */
 
   /* Konten */
 .comic-items .tittle {
@@ -453,9 +474,9 @@ h2 span {
     }
 
     /* Navbar Abjad */
-    .container-abjd {
+    /* .container-abjd {
         margin-top: 20px;
-    }
+    } */
     
     /* Konten */
     .konten {
