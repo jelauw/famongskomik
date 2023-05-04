@@ -114,7 +114,15 @@ body {
         font-size: large;
         justify-content: space-between;
         overflow-x: auto;
+        scr
     }
+    :target:before {
+        content: "";
+        display: block;
+        height: 100px; 
+        margin: -50px 0 0; 
+    }
+
     .nav-abjad a:hover {
         color: coral;
     }
@@ -183,7 +191,7 @@ h2 span {
     color: #a1a1a1;
 }
 .tittle .update {
-    margin: 0;
+    margin-top: 5px;
 }
 .tittle .tag {
     position: absolute;
@@ -324,6 +332,17 @@ h2 span {
 .list-komik .comic-items {
     position: relative;
     width: 100%;
+}
+.list-komik .views {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    background-color: #222;
+    color: #fff;
+    padding: 2px 10px;
+    font-size: 12px;
+    border-radius: 5px;
 }
 .list-komik .comic-items .tittle {
     text-align: center;
