@@ -32,7 +32,6 @@ body {
     right: 0;
     z-index: 999;
 }
-
 .logo a {
     display: flex;
     font-weight: 600;
@@ -47,7 +46,6 @@ body {
     height: 30px;
     margin: 10px 0;
 }
-
 .navbar .search {
     display: flex;
     align-items: center;
@@ -67,7 +65,6 @@ body {
     outline: none;
     cursor: pointer;
 }
-
 .navbar .navbar-nav {
     display: flex;
     justify-content: center;
@@ -82,71 +79,13 @@ body {
     margin: 0 10px;
     font-size: 12px;
 }
-.navbar .navbar-nav a:hover {
-    content: '';
-    display: block;
-    border-bottom: 2px solid coral;
-    padding-bottom: 10px;
-    transition: 0.2s;
-
-}
-
-.navbar-nav .active {
-    font-weight: bold; /* memberikan tebal pada teks */
-    color: coral; /* mengubah warna teks menjadi merah */
-    border-bottom: 2px solid coral;
-    height: 30px;
-    padding-bottom: 10px;
-}
-
-
-/* Navbar-Abjad */
-/* .container-abjd {
-    display: flex;
-    position: fixed;
-    left: 50%;
-    left: 0;
-    right: 0;
-    top: 50px;
-    scroll-behavior: smooth;
-    transform: translate(-50%, -50%);
-    overflow: hidden;
-    white-space: nowrap;
-    background-color: #fff;
-    z-index: 100;
-    }   
-    .nav-abjad {
-    margin: 10px auto;
-    display: inline-block;
-    font-size: medium;
-    justify-content: space-between;
-    }  
-    .nav-abjad a {
-        display: inline-block;
-        text-decoration: none;
-        margin: 0 10px;
-        color: blue;
-        font-size: large;
-        justify-content: space-between;
-        overflow-x: auto;
-    }
-    :target:before {
-        content: "";
-        display: block;
-        height: 100px; 
-        margin: -50px 0 0; 
-    }
-
-    .nav-abjad a:hover {
-        color: coral;
-    } */
-
 /* Konten */
 .konten {
     display: flex;
     position: relative;
-    margin: 80px 5%;
-    justify-content: center;
+    margin: 80px auto;
+    padding: 10px;
+    max-width: 900px;
 }
 
 /* Update Terbaru */
@@ -154,59 +93,69 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    max-width: 900px;
     flex-direction: column;
 }
+
 h2 {
     color: #ff7f50;
     font-size: medium;
 }
+
 h2 span {
     background-color: blue;
     padding: 5px 10px;
     color: white;
     border-radius: 10px;
 }
+
 .konten-update .list-update {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin: 20px 0;
 }
+
 .list-update .comic-items {
     position: relative;
     width: 100%
 }
+
 .comic-items .cover-container {
     position: relative;
     display: inline-block;
     width: 100%;
 }
+
 .comic-items img {
     display: block;
     max-width: 100%;
 }
+
 .comic-items .tittle {
-    width: 150px;
+    width: 100%;
     height: 55px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 .tittle a {
     font-weight: 500;
     font-size: large;
     color: #000;
     text-decoration: none;
 }
+
 .tittle p {
     font-size: 12px;
     font-style: italic;
     color: #a1a1a1;
 }
+
 .tittle .update {
     margin-top: 5px;
 }
+
 .tittle .tag {
     position: absolute;
     bottom: 0;
@@ -226,28 +175,28 @@ h2 span {
     flex-direction: column;
 }
 
-.top-view .list-views {
+.list-views {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
 }
 
-.top-view .comic-views {
+.comic-views {
     display: flex;
     margin-bottom: 10px;
 }
 
-.top-view .gambar {
+.gambar {
     position: relative;
-    width: 30%;
+    width: 35%;
 }
 
-.top-view .gambar img {
+.gambar img {
     max-width: 100%;
     height: auto;
 }
 
-.top-view .views {
+.views {
     display: flex;
     position: absolute;
     top: 10px;
@@ -259,19 +208,33 @@ h2 span {
     border-radius: 5px;
 }
 
+.detail {
+    display: flex;
+    position: absolute;
+    bottom: 6px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    width: 100%;
+    cursor: pointer;
+}
+
+.detail p {
+    margin: auto;
+}
+
 .views ion-icon {
     font-size: medium;
     margin-right: 5px;
 }
 
-.top-view .informasi {
+.informasi {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
     width: 200px;
 }
 
-.top-view .judul {
+.judul {
     font-size: large;
     font-weight: 500;
     text-overflow: ellipsis;
@@ -280,7 +243,7 @@ h2 span {
     margin-top: 20px;
 }
 
-.top-view .genre {
+.genre {
     margin-bottom: 5px;
     color: #999;
 }
@@ -289,9 +252,16 @@ h2 span {
     font-size: small;
 }
 
-.top-view .update {
+.update,
+.up-chapter {
     color: #999;
     font-style: italic;
+}
+
+.chapter {
+    color: #999;
+    font-style: italic;
+    margin-top: 30px;
 }
 
 /* Section Genre */
@@ -332,21 +302,25 @@ h2 span {
     flex-direction: column;
     /* margin-top: 50px; */
 }
+
 .list-judul {
     margin: 20px 0;
     font-size: 24px;
     font-weight: bold;
 }
+
 .list-komik {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
     margin: 20px 20px;
 }
+
 .list-komik .comic-items {
     position: relative;
     width: 100%;
 }
+
 .list-komik .views {
     display: flex;
     position: absolute;
@@ -358,117 +332,204 @@ h2 span {
     font-size: 12px;
     border-radius: 5px;
 }
-.list-komik .comic-items .tittle {
+
+.list-komik .tittle {
     text-align: center;
 }
 
 /* favorit */
-.navbar-htyfav {
+.nav {
     display: flex;
-    max-width: 900px;
-    margin: ;
+    justify-content: center;
 }
-@media screen and (min-width: 1025px) {
-.navbar .navbar-nav a ion-icon {
+
+.nav button {
+    padding: 5px 10px;
+    margin: 0 10px;
+    background-color: transparent;
+    text-decoration: none;
+    color: coral;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.nav button:hover {
+    background-color: blue;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 10px;
+}
+
+button.active {
+    background-color: blue;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 10px;
+}
+
+.content-wrapper {
+    max-width: 900px;
+}
+
+.content-wrapper .content {
     display: none;
+
+}
+
+.content.active {
+    display: block;
+}
+
+.list-history {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.content .comic-views {
+    margin: 20px 0;
+    width: 100%;
+}
+
+.content .gambar {
+    width: 35%;
+}
+
+@media screen and (min-width: 1025px) {
+    .navbar .navbar-nav a ion-icon {
+        display: none;
+    }
+
+    .navbar-nav .active {
+        font-weight: bold;
+        /* memberikan tebal pada teks */
+        color: coral;
+        /* mengubah warna teks menjadi merah */
+        border-bottom: 2px solid coral;
+        height: 30px;
+        padding-bottom: 10px;
+    }
+
+    .navbar .navbar-nav a:hover {
+        content: '';
+        display: block;
+        border-bottom: 2px solid coral;
+        padding-bottom: 10px;
+        transition: 0.2s;
     }
 }
 
 @media only screen and (max-width: 1024px) {
-    /* Navbar */
-.navbar .logo a {
-    display: flex;
-    font-weight: 600;
-    align-items: center;
-    font-size: large;
-    color: blue;
-}
-.logo span {
-    color: coral;
-}
-.logo img {
-    height: 30px;
-    margin: 10px 0;
-}
-.navbar .navbar-nav {
-    display: flex;
-    flex-direction: row;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: blue;
-    height: 50px;
-    }
-.navbar .navbar-nav a {
-    display: flex;
-    flex-direction: column;
-    color: #fff;
-    margin: 0 auto;
-    font-size: 10px;
-    text-decoration: none;
-    }
-.navbar .navbar-nav ion-icon {
-    display: flex;
-    font-size: 22px;
-    }
-.navbar .search {
-    justify-content: right;
-    }
-.navbar .search input[type="text"] {
-    width: 300px;
-    }
-  /* Navbar End */
 
-  /* Navbar Abjad */
-/* .container-abjd {
+    /* Navbar */
+    .navbar .logo a {
+        display: flex;
+        font-weight: 600;
+        align-items: center;
+        font-size: large;
+        color: blue;
+    }
+
+    .logo span {
+        color: coral;
+    }
+
+    .logo img {
+        height: 30px;
+        margin: 10px 0;
+    }
+
+    .navbar .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: blue;
+        height: 50px;
+    }
+
+    .navbar .navbar-nav a {
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        margin: 0 auto;
+        font-size: 10px;
+        text-decoration: none;
+    }
+
+    .navbar .navbar-nav ion-icon {
+        display: flex;
+        font-size: 22px;
+    }
+
+    .navbar .search {
+        justify-content: right;
+    }
+
+    .navbar .search input[type="text"] {
+        width: 300px;
+    }
+
+    /* Navbar End */
+
+    /* Navbar Abjad */
+    /* .container-abjd {
     overflow-x: auto;
 } */
 
-  /* Konten */
-.comic-items .tittle {
-    margin: 0;
-    width: 135px;
-    height: 45px;
-}
-.tittle a {
-    font-size: medium;
-}
-.tittle p {
-    font-size: 10px;
-}
-.tittle .tag {
-    font-size: 10px;
-    padding: 3px 6px;
-    bottom: 0;
-}
+    /* Konten */
+    .comic-items .tittle {
+        margin: 0;
+        width: 135px;
+        height: 45px;
+    }
 
-/* Top Views */
-.top-view .comic-views {
-    margin-bottom: 0;
-}
-.top-view .gambar {
-    width: 80%;
-}
-.top-view .judul {
-    font-size: medium;
-    margin-top: 10px;
-}
-.informasi p {
-    font-size: 10px;
-}
+    .tittle a {
+        font-size: medium;
+    }
 
-/* Genre Komik */
-.genre-komik .genre-options a {
-    padding: 5px 10px;
-}
+    .tittle p {
+        font-size: 10px;
+    }
+
+    .tittle .tag {
+        font-size: 10px;
+        padding: 3px 6px;
+        bottom: 0;
+    }
+
+    /* Top Views */
+    .top-view .comic-views {
+        margin-bottom: 0;
+    }
+
+    .top-view .gambar {
+        width: 80%;
+    }
+
+    .top-view .judul {
+        font-size: medium;
+        margin-top: 10px;
+    }
+
+    .informasi p {
+        font-size: 10px;
+    }
+
+    /* Genre Komik */
+    .genre-komik .genre-options a {
+        padding: 5px 10px;
+    }
 }
 
 @media only screen and (max-width: 560px) {
+
     /* Navbar */
     .navbar .logo p {
         display: none;
     }
+
     .navbar .search input[type="text"] {
         width: 200px;
     }
@@ -477,12 +538,13 @@ h2 span {
     /* .container-abjd {
         margin-top: 20px;
     } */
-    
+
     /* Konten */
     .konten {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
+
     .konten-update .list-update {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
@@ -500,13 +562,13 @@ h2 span {
     }
 
     .top-view .gambar {
-        max-width: 150px;
+        max-width: 100px;
     }
 
     /* list-komik */
-    .container-abjd {
-    width: 100%;
-    left: 0;
-    transform: translate(0, -50%);
+    .list-komik {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin: 0;
     }
 }
