@@ -1,91 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Upload Preview</title>
+  <title>Admin Web</title>
   <style>
-    .container {
-      max-width: 800px;
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+    form {
+      max-width: 400px;
       margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-    #image-preview {
-      border: 1px solid #ccc;
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
       padding: 10px;
-      width: 300px;
-      height: 300px;
-      margin-bottom: 20px;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 15px;
     }
-    #image-preview img {
-      max-width: 100%;
-      max-height: 100%;
+
+    input[type="file"] {
+      margin-bottom: 15px;
     }
-    #upload-btn {
-      position: absolute;
-      bottom: 5px;
-      right: 5px;
+
+    input[type="submit"] {
       background-color: #4CAF50;
-      color: white;
-      padding: 5px 10px;
+      color: #fff;
       border: none;
-      border-radius: 5px;
-      font-size: 16px;
+      padding: 10px 20px;
+      border-radius: 4px;
       cursor: pointer;
     }
-    #file-input {
-      display: none;
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div id="image-preview">
-      <button id="upload-btn">Upload</button>
-      <input type="file" id="file-input">
-    </div>
-  </div>
-  <script>
-    const fileInput = document.getElementById('file-input');
-    const uploadBtn = document.getElementById('upload-btn');
-    const imagePreview = document.getElementById('image-preview');
-    
-    uploadBtn.addEventListener('click', () => {
-      fileInput.click();
-    });
+  <h1>Input Komik</h1>
 
-    fileInput.addEventListener('change', () => {
-      const file = fileInput.files[0];
-      const reader = new FileReader();
-      
-      reader.addEventListener('load', () => {
-        const imageDataUrl = reader.result;
-        const image = new Image();
-        image.src = imageDataUrl;
-        image.onload = () => {
-          const aspectRatio = image.width / image.height;
-          if (aspectRatio > 1) {
-            imagePreview.style.width = '100%';
-            imagePreview.style.height = 'auto';
-          } else {
-            imagePreview.style.width = 'auto';
-            imagePreview.style.height = '100%';
-          }
-        }
-        imagePreview.innerHTML = '';
-        imagePreview.appendChild(image);
-      });
-      
-      if (file) {
-        reader.readAsDataURL(file);
-      }
-    });
-  </script>
+  <form>
+    <label for="judul">Judul:</label>
+    <input type="text" id="judul" name="judul" required><br>
+
+    <label for="deskripsi">Deskripsi:</label>
+    <textarea id="deskripsi" name="deskripsi" required></textarea><br>
+
+    <label for="genre">Genre:</label>
+    <input type="text" id="genre" name="genre" required><br>
+
+    <label for="gambar">Gambar:</label>
+    <input type="file" id="gambar" name="gambar" accept="image/*" required><br>
+
+    <input type="submit" value="Publish">
+  </form>
 </body>
 </html>
