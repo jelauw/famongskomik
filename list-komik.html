@@ -8,8 +8,9 @@
     <title>Famongs Komik</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -42,6 +43,21 @@
     <section class="konten">
         <div class="konten-list">
             <h2><span>Daftar</span> Komik</h2>
+            <div class="dropdown">
+                <button class="dropdown-btn">Genre <ion-icon name="chevron-down"></ion-icon></button>
+                <div class="dropdown-content">
+                    <button class="genre-btn active" data-genre="all">All</button>
+                    <button class="genre-btn" data-genre="action">Action</button>
+                    <button class="genre-btn" data-genre="advanture">Adventure</button>
+                    <button class="genre-btn" data-genre="fantasy">Fantasy</button>
+                    <button class="genre-btn" data-genre="harem">Harem</button>
+                    <button class="genre-btn" data-genre="martial-arts">Martial Arts</button>
+                    <button class="genre-btn" data-genre="romance">Romance</button>
+                    <button class="genre-btn" data-genre="sci-fi">Sci-fi</button>
+                    <button class="genre-btn" data-genre="shounen">Shounen</button>
+                    <button class="genre-btn" data-genre="supernatural">Supernatural</button>
+                </div>
+            </div>
             <div class="list-judul">
                 <p id="a">A</p>
                 <p id="b">B</p>
@@ -57,15 +73,17 @@
                 <p id="l">L</p>
                 <p id="m">M</p>
                 <div class="daftar-komik">
-                    <div class="comic-items">
+                    <div class="comic-items" data-genres="action, advanture, fantasy, harem, martial-arts, romance, sci-fi, shounen, supernatural">
                         <a href="#">
                             <div class="cover-container">
                                 <img src="img/cover-martialpeak.jpg" alt="Martial Peak">
-                                <span class="views"><ion-icon name="eye"></ion-icon><p>1K</p>
+                                <span class="views">
+                                    <ion-icon name="eye"></ion-icon>
+                                    <p>1K</p>
                                 </span>
                             </div>
                             <div class="tittle">
-                                <p class="judul" target="text">Martial Peak</p>
+                                <h4 class="judul" target="text">Martial Peak</h4>
                             </div>
                         </a>
                     </div>
@@ -90,5 +108,6 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+<script src="js/genre.js"></script>
 
 </html>
