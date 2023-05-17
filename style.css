@@ -37,8 +37,9 @@ body {
     display: flex;
     font-weight: 600;
     align-items: center;
-    font-size: large;
+    font-size: small;
     color: blue;
+    font-style: italic;
 }
 
 .logo span {
@@ -100,15 +101,24 @@ h2 span {
     color: white;
     border-radius: 10px;
 }
+
 h4 {
     font-weight: 500;
     font-size: 1rem;
-}
-p {
-    font-size: 0.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* Konten */
+p {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #a1a1a1;
+}
+
+/* KONTEN */
 .konten {
     display: flex;
     flex-wrap: wrap;
@@ -119,7 +129,7 @@ p {
     max-width: 900px;
 }
 
-/* Update */
+/* HALAMAN BERANDA KONTEN UPDATE */
 .konten-update {
     width: 100%;
 }
@@ -140,24 +150,16 @@ p {
     max-width: 100%;
     height: 100%;
 }
-
+.konten-update .tittle {
+    padding: 5px 5px 0;
+}
 .konten-update .judul {
-    display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
     color: #000;
     width: 90%;
     text-decoration: none;
 }
 
-.tittle .update, .tittle .tag {
-    font-style: italic;
-    color: #a1a1a1;
-}
-
-/* Views */
+/* HALAMAN BERANDA KONTEN TOP VIEWS */
 .top-views {
     margin: 20px 0;
 }
@@ -169,7 +171,7 @@ p {
     margin: 0 20px;
 }
 
-.list-views .comic-views a {
+.comic-views a {
     display: flex;
 }
 
@@ -204,7 +206,7 @@ p {
     margin-right: 5px;
 }
 
-.comic-views .informasi {
+.informasi {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
@@ -213,19 +215,26 @@ p {
 .informasi .judul {
     color: #000;
     margin-top: 10px;
+    max-width: 90%;
 }
 
 .informasi .genre,
-.informasi .update {
+.informasi .update,
+.informasi .baca,
+.informasi .up-ch {
     color: #999;
-    font-style: italic;
     margin-top: 10px;
 }
 
-/* DAFTAR KOMIK */
+/* HALAMAN DAFTAR KOMIK */
 
 .list-judul {
     padding: 20px;
+}
+.list-judul p {
+    font-style: normal;
+    font-size: medium;
+    color: #000;
 }
 
 .daftar-komik {
@@ -236,15 +245,12 @@ p {
 }
 
 .daftar-komik .judul {
-    padding-top: 5px;
+    padding: 10px 10px 0;
     line-height: 1;
-    white-space: normal;
-    text-align: center;
-    overflow: hidden;
     color: #000;
-    overflow-wrap: break-word;
 }
 
+/* HALAMAN DAFTAR KOMIK KONTEN DROPDOWN GENRE */
 .dropdown {
     display: inline-block;
     position: absolute;
@@ -272,10 +278,11 @@ p {
     z-index: 1;
     right: 0;
 }
+
 .dropdown-content button {
     display: flex;
     justify-content: end;
-    padding: 10px 20px;
+    padding: 5px 20px;
     cursor: pointer;
 }
 
@@ -290,7 +297,7 @@ p {
     height: 300px;
 }
 
-/* PAGE FAVORIT */
+/* HALAMAN FAVORIT */
 .tab-container {
     position: relative;
     overflow-x: hidden;
@@ -335,7 +342,7 @@ p {
     display: block;
 }
 
-/* PAGE FAVORIT KONTEN RIWAYAT */
+/* HALAMAN FAVORIT KONTEN RIWAYAT */
 .list-riwayat {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -343,20 +350,7 @@ p {
     margin: 10px 20px;
 }
 
-.list-riwayat .informasi {
-    text-decoration: none;
-    color: #ccc;
-}
-
-.list-riwayat .comic-views a {
-    display: flex;
-}
-
-.comic-views .gambar img {
-    width: 100%;
-}
-
-/* PAGE FAVORIT KONTEN FAVORIT */
+/* HALAMAN FAVORIT KONTEN FAVORIT */
 .daftar-favorit {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -372,12 +366,14 @@ p {
     color: #000;
     overflow-wrap: break-word;
 }
+
 .daftar-favorit .cover-container {
     display: inline-block;
     position: relative;
     overflow: hidden;
     line-height: 0;
 }
+
 .cover-container .hover-overlay {
     position: absolute;
     flex-direction: column;
@@ -489,15 +485,6 @@ p {
     .navbar .search input[type="text"] {
         width: 300px;
     }
-    h4 {
-        font-size: 0.8rem;
-    }
-    p {
-        font-size: 0.6rem;
-    }
-    .tittle .tag {
-        margin-top: -15px;
-    }
 
     /* FITUR SLIDE */
     .tab-pane {
@@ -517,33 +504,23 @@ p {
         width: 200px;
     }
 
-    /* UPDATE */
+    /* HALAMAN BERANDA KONTEN UPDATE */
     .konten-update .list-update {
         grid-template-columns: repeat(2, 1fr);
-        margin: 20px 10px;
+        margin: 10px 10px;
     }
 
-    .konten-update h4 {
-        font-size: 100%;
-    } 
-    .konten-update .tittle p {
-        font-size: 80%;
-    }
-    .konten-update .tag {
-        margin-top: -15px;
-    }
-
-    /* TOP-VIEWS */
+    /* HALAMAN BERANDA KONTEN TOP VIEWS */
     .top-views .list-views {
         grid-template-columns: repeat(1, 1fr);
-        margin: 20px 10px;
+        margin: 10px 10px;
     }
 
     .comic-views .gambar {
         width: 35%;
     }
 
-    /* DAFTAR KOMIK */
+    /* HALAMAN DAFTAR KOMIK */
     .list-judul {
         padding: 10px;
     }
@@ -552,12 +529,12 @@ p {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* PAGE FAVORIT KONTEN RIWAYAT */
+    /* HALAMAN FAVORIT KONTEN RIWAYAT */
     .list-riwayat {
         grid-template-columns: repeat(1, 1fr);
     }
 
-    /* PAGE FAVORIT KONTEN FAVORIT */
+    /* HALAMAN FAVORIT KONTEN FAVORIT */
     .daftar-favorit {
         grid-template-columns: repeat(2, 1fr);
     }
