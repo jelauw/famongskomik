@@ -171,7 +171,7 @@ p {
     margin: 0 20px;
 }
 
-.comic-views a {
+.comic-views, .comic-views a {
     display: flex;
 }
 

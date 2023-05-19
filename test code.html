@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Web</title>
+  
+</head>
+<body>
+  <div class="genre-container">
+    <a href="#" class="genre">Action</a>
+    <a href="#" class="genre">Adventure</a>
+    <a href="#" class="genre">Fantasy</a>
+    <a href="#" class="genre">Harem</a>
+    <a href="#" class="genre">Martial Arts</a>
+    <a href="#" class="genre">Romance</a>
+    <a href="#" class="genre">Sci-fi</a>
+    <a href="#" class="genre">Shounen</a>
+    <a href="#" class="genre">Supernatural</a>
+  </div>
+  
+  <div class="list-judul">
+    <p class="alphabet" data-genres="action advanture fantasy">A</p>
+    <p class="alphabet" data-genres="adventure fantasy harem">B</p>
+    <p class="alphabet" data-genres="action fantasy martial-arts romance">C</p>
+    <p class="alphabet" data-genres="fantasy harem martial-arts">D</p>
+    <p class="alphabet" data-genres="fantasy martial-arts romance sci-fi">E</p>
+    <p class="alphabet" data-genres="fantasy martial-arts sci-fi supernatural">F</p>
+    <p class="alphabet" data-genres="fantasy martial-arts shounen supernatural">G</p>
+    <p class="alphabet" data-genres="fantasy martial-arts supernatural">H</p>
+    <p class="alphabet" data-genres="fantasy martial-arts romance">I</p>
+    <p class="alphabet" data-genres="action fantasy martial-arts sci-fi supernatural">J</p>
+    <p class="alphabet" data-genres="fantasy martial-arts romance sci-fi supernatural">K</p>
+    <p class="alphabet" data-genres="fantasy martial-arts romance sci-fi">L</p>
+    <p class="alphabet" data-genres="action advanture fantasy harem martial-arts romance sci-fi shounen supernatural">M</p>
+    <p class="alphabet" data-genres="action advanture comedy drama fantasy harem martial-arts shounen">N</p>
+    <p class="alphabet" data-genres="action advanture comedy drama fantasy harem martial-arts shounen supernatural">O</p>
+    <!-- Tambahkan elemen <p> lainnya sesuai dengan abjad dan genre yang sesuai -->
+  </div>
+  
+  
+  
+</body>
+<script>
+  const genreLinks = document.querySelectorAll('.genre-container .genre');
+  const alphabets = document.querySelectorAll('.list-judul .alphabet');
+
+  genreLinks.forEach(genreLink => {
+    genreLink.addEventListener('click', () => {
+      const selectedGenre = genreLink.innerText.toLowerCase();
+
+      // Tampilkan semua abjad
+      alphabets.forEach(alphabet => {
+        alphabet.style.display = 'block';
+      });
+
+      // Filter abjad berdasarkan genre yang dipilih
+      alphabets.forEach(alphabet => {
+        const genres = alphabet.getAttribute('data-genres').split(' ');
+        if (!genres.includes(selectedGenre)) {
+          alphabet.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+</html>
