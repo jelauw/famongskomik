@@ -6,7 +6,7 @@ genreLinks.forEach(genreLink => {
     genreLink.addEventListener('click', event => {
         event.preventDefault();
         const selectedGenre = genreLink.innerText.toLowerCase();
-        const url = `../../../../list-komik.html?genre=${selectedGenre}`;
+        const url = `../../../list-komik.html?genre=${selectedGenre}`;
         window.location.href = url;
     });
 });
