@@ -6,7 +6,7 @@ genreLinks.forEach(genreLink => {
     genreLink.addEventListener('click', event => {
         event.preventDefault();
         const selectedGenre = genreLink.innerText.toLowerCase();
-        const url = `../../../famongskomik/list-komik.html?genre=${selectedGenre}`;
+        const url = `../../../../list-komik.html?genre=${selectedGenre}`;
         window.location.href = url;
     });
 });
@@ -15,8 +15,8 @@ genreLinks.forEach(genreLink => {
 const urlParams = new URLSearchParams(window.location.search);
 const selectedGenre = urlParams.get('genre');
 if (selectedGenre) {
-  const genreButton = document.querySelector(`.genre-container .genre[data-genre="${selectedGenre}"]`);
-  if (genreButton) {
-    genreButton.classList.add('active');
+  const genreButtons = document.querySelector(`.genre-container .genre[data-genre="${selectedGenre}"]`);
+  if (genreButtons) {
+    genreButtons.classList.add('active');
   }
 }

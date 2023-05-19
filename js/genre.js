@@ -28,23 +28,14 @@ genreButtons.forEach((button) => {
                 item.style.display = 'none';
             }
         });
-    });
-});
-
-genreButtons.forEach(button => {
-    genreButtons.addEventListener('click', () => {
-        const selectedGenre = genreButtons.innerText.toLowerCase();
-
-        // Tampilkan semua abjad
-        alphabets.forEach(alphabet => {
-            alphabet.style.display = 'block';
-        });
 
         // Filter abjad berdasarkan genre yang dipilih
         alphabets.forEach(alphabet => {
             const genres = alphabet.getAttribute('data-genres').split(',').map(genre => genre.trim());
             if (!genres.includes(selectedGenre)) {
                 alphabet.style.display = 'none';
+            } else {
+                alphabet.style.display = 'block';
             }
         });
     });
@@ -60,54 +51,12 @@ if (selectedGenre) {
             item.style.display = 'none';
         }
     });
+    alphabets.forEach(alphabet => {
+        const genres = alphabet.getAttribute('data-genres').split(',').map(genre => genre.trim());
+        if (!genres.includes(selectedGenre)) {
+            alphabet.style.display = 'none';
+        } else {
+            alphabet.style.display = 'block';
+        }
+    });
 }
-
-// Tambahkan event listener untuk setiap genre-btn
-genreButtons.forEach(button => {
-    button.addEventListener('click', event => {
-        event.preventDefault();
-        const genre = button.dataset.genre;
-        const genreContainer = document.querySelector('.list-judul');
-
-        // Sembunyikan semua elemen judul komik
-        const judulKomik = genreContainer.querySelectorAll('.tittle');
-        judulKomik.forEach(judul => {
-            judul.style.display = 'none';
-        });
-
-        // Tampilkan hanya komik dengan genre yang dipilih dan abjad yang sesuai
-        const selectedKomik = genreContainer.querySelectorAll(`.comic-items[data-genres*="${genre}"]`);
-        selectedKomik.forEach(komik => {
-            const abjad = komik.querySelector('.judul').textContent.charAt(0).toUpperCase();
-            if (button.dataset.abjad === abjad) {
-                komik.style.display = 'block';
-            }
-        });
-    });
-});
-
-// Tambahkan event listener untuk setiap genre-btn
-genreButtons.forEach(button => {
-    button.addEventListener('click', event => {
-        event.preventDefault();
-        const genre = button.dataset.genre.toLowerCase();
-        const genreContainer = document.querySelector('.list-judul');
-
-        // Sembunyikan semua elemen judul komik
-        const judulKomik = genreContainer.querySelectorAll('.tittle');
-        judulKomik.forEach(judul => {
-            judul.style.display = 'none';
-        });
-
-        // Tampilkan hanya komik dengan genre yang dipilih dan abjad yang sesuai
-        const selectedKomik = genreContainer.querySelectorAll('.comic-items');
-        selectedKomik.forEach(komik => {
-            const genres = komik.dataset.genres.split(',').map(genre => genre.trim());
-            const abjad = komik.querySelector('.judul').textContent.charAt(0).toUpperCase();
-
-            if (genres.includes(genre) && button.dataset.abjad === abjad) {
-                komik.style.display = 'block';
-            }
-        });
-    });
-});
