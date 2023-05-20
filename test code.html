@@ -40,7 +40,11 @@
     <!-- Tambahkan elemen <p> lainnya sesuai dengan abjad dan genre yang sesuai -->
   </div>
 
+  <input type="text" id="searchInput" placeholder="Cari judul atau genre..." />
+<button id="searchButton">Cari</button>
+<ul id="searchResults"></ul>
 
+  
 
 </body>
 <script>
@@ -65,6 +69,53 @@
       });
     });
   });
+
+// Data komik
+const comicData = [
+  { title: 'Komik A', genre: 'Fantasi' },
+  { title: 'Komik B', genre: 'Romantis' },
+  { title: 'Komik C', genre: 'Aksi' }
+];
+
+// Fungsi pencarian
+function search() {
+  const searchInput = document.getElementById('searchInput');
+  const searchResults = document.getElementById('searchResults');
+  const searchTerm = searchInput.value.toLowerCase();
+
+  // Bersihkan hasil pencarian sebelumnya
+  searchResults.innerHTML = '';
+
+  // Batasi pencarian hanya jika kata kunci memiliki 1 huruf atau lebih
+  if (searchTerm.length >= 1) {
+    // Cari judul atau genre yang cocok dengan kata kunci
+    const matchedComics = comicData.filter(comic =>
+      comic.title.toLowerCase().includes(searchTerm) ||
+      comic.genre.toLowerCase().includes(searchTerm)
+    );
+
+  // Tampilkan hasil pencarian
+  if (matchedComics.length > 0) {
+      matchedComics.forEach(comic => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `Judul: ${comic.title}, Genre: ${comic.genre}`;
+        searchResults.appendChild(listItem);
+      });
+    } else {
+      const listItem = document.createElement('li');
+      listItem.textContent = 'Tidak ada hasil yang cocok.';
+      searchResults.appendChild(listItem);
+    }
+  } else {
+    const listItem = document.createElement('li');
+    listItem.textContent = 'Masukkan minimal 1 huruf.';
+    searchResults.appendChild(listItem);
+  }
+}
+
+// Tambahkan event listener ke tombol "Cari"
+const searchButton = document.getElementById('searchButton');
+searchButton.addEventListener('click', search);
 </script>
 
 </html>

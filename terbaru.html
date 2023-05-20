@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Famongs Komik</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -18,7 +18,7 @@
     <nav class="navbar">
         <div class="logo">
             <a href="index.html"><img src="img/logo-famongskomik.png" alt="FamongsKomik">
-                <h1>Famongs<span>Komik</span></h1>
+                <p>Famongs<span>Komik</span></p>
             </a>
         </div>
         <div class="search">
@@ -28,10 +28,13 @@
             </button>
         </div>
         <div class="navbar-nav">
-            <a href="#" class="active">
+            <a href="index.html">
                 <ion-icon name="home"></ion-icon>Beranda
             </a>
-            <a href="list-komik.html">
+            <a href="terbaru.html" class="active">
+                <ion-icon name="refresh-circle"></ion-icon>Terbaru
+            </a>
+            <a href="List-komik.html">
                 <ion-icon name="list"></ion-icon>List Komik
             </a>
             <a href="favorit.html">
@@ -40,55 +43,25 @@
         </div>
     </nav>
 
-    <!-- Konten -->
+    <!-- Konten update -->
     <section class="konten">
-        <!-- KONTEN UPDATE -->
         <div class="konten-update">
             <h2><span>Update</span> Terbaru</h2>
             <div class="list-update">
                 <div class="comic-items">
                     <div class="cover-container">
-                        <a href="comic/martial-peak.html"><img src="img/cover-martialpeak.jpg" alt="Martial Peak">
+                        <a href="#"><img src="img/cover-martialpeak.jpg" alt="Martial Peak"></a>
                     </div>
                     <div class="tittle">
-                        <h4 class="judul" target="text">Martial Peak</h4>
-                        <p class="tag">Chapter 01</p>
+                        <a href="#" terget="text">Martial Peak</a>
+                        <a href="#"><span class="tag">Chapter 01</span></a>
                         <p class="update">10 menit lalu</p>
-                    </div></a>
-                </div>
-                <div class="comic-items">
-                    <div class="cover-container">
-                        <a href="#"><img src="img/cover-talesofdemonsandgods.jpg" alt="Tales of Demons and Gods">
                     </div>
-                    <div class="tittle">
-                        <h4 class="judul" target="text">Tales of Demons and Gods</h4>
-                        <p class="tag">Chapter 01</p>
-                        <p class="update">10 menit lalu</p>
-                    </div></a>
-                </div>
-            </div>
-        </div>
-        <!-- KONTEN TOP VIEWS -->
-        <div class="top-views">
-            <h2><span>Top</span> Views</h2>
-            <div class="list-views">
-                <div class="comic-views">
-                    <a href="comic/martial-peak.html">
-                        <div class="gambar">
-                            <img src="img/cover-martialpeak.jpg" alt="Martial Peak">
-                            <span class="views">
-                                <ion-icon name="eye"></ion-icon>1K</span>
-                        </div>
-                        <div class="informasi">
-                            <h4 class="judul">Martial Peak</h4>
-                            <p class="genre">Action, Adventure, Fantasy</p>
-                            <p class="update">10 menit lalu</p>
-                        </div>
-                    </a>
                 </div>
             </div>
         </div>
     </section>
+
 
 
     <!-- icon -->
