@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famongs Komik</title>
+    <link rel="stylesheet" href="../detailcomic.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="../../../img/logo-famongskomik.png" alt="FamongsKomik">
+                <h1>Famongs<span>Komik</span></h1>
+            </a>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Pencarian...">
+            <button id="submit">
+                <ion-icon name="search"></ion-icon>
+            </button>
+        </div>
+        <div class="navbar-nav">
+            <a href="../../index.html">
+                <ion-icon name="home"></ion-icon>Beranda
+            </a>
+            <a href="../../list-komik.html">
+                <ion-icon name="list"></ion-icon>List Komik
+            </a>
+            <a href="../../favorit.html">
+                <ion-icon name="heart"></ion-icon>Favorit
+            </a>
+        </div>
+    </nav>
+
+    <section class="konten">
+        <div class="comic-detail">
+            <div class="comic-image">
+                <img src="../../../img/cover-martialpeak.jpg" alt="Gambar Komik">
+            </div>
+            <div class="comic-info">
+                <h2>Judul Komik</h2>
+                <p>Sinopsis Komik</p>
+                <p>Genre: <a href="halaman-genre.html">Genre Komik</a></p>
+                <button class="read-button">Mulai Membaca</button>
+                <button class="favorite-button">Tambah ke Favorit</button>
+                <p>Status: On Going/End</p>
+                <p>Tahun Rilis: YYYY</p>
+                <p>Penulis: Nama Penulis</p>
+                <p>Artis: Nama Artis</p>
+                <p>Views: XX</p>
+                <p>Tanggal Update Terakhir: DD/MM/YYYY</p>
+                <p>Pilihan Chapter:</p>
+                <ul class="chapter-list">
+                    <li><a href="chapter1.html">Chapter 1</a></li>
+                    <li><a href="chapter2.html">Chapter 2</a></li>
+                    <li><a href="chapter3.html">Chapter 3</a></li>
+                    <!-- Tambahkan daftar chapter lainnya -->
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- icon -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+<script src="js/script.js"></script>
+
+</html>

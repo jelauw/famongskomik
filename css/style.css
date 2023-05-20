@@ -156,6 +156,7 @@ p {
 .tittle .judul {
     color: #000;
     width: 90%;
+    line-height: 1.2;
     text-decoration: none;
 }
 
@@ -539,6 +540,9 @@ p {
         grid-template-columns: repeat(1, 1fr);
         gap: 10px;
         margin: 5px 10px 20px;
+    }
+    .list-riwayat .comic-views .informasi {
+        flex-basis: 100%;
     }
 
     /* HALAMAN FAVORIT KONTEN FAVORIT */
