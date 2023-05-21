@@ -94,3 +94,22 @@ tabButtons.forEach((button, index) => {
 
 // Set initial tab
 changeTab(activeTabIndex);
+
+function bukaHalaman() {
+  window.location.href = "comic/martial-peak.html";
+}
+
+function hapusData() {
+  if (confirm("Apakah Anda yakin ingin menghapus data?")) {
+    // Logika penghapusan data secara lokal
+    // Misalnya, jika data disimpan dalam array:
+    data = null;
+    console.log("Data berhasil dihapus.");
+
+    // Lakukan tindakan lain setelah penghapusan sukses
+  } else {
+    // Tidak melakukan apa-apa jika pengguna membatalkan
+  }
+}
+
+

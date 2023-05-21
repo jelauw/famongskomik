@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins';
+    background-color: #bddfff;
+    color: #000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    padding: 0 3%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.navbar.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.logo a {
+    display: flex;
+    font-weight: 600;
+    align-items: center;
+    font-size: small;
+    color: blue;
+    font-style: italic;
+}
+
+.logo span {
+    color: coral;
+}
+
+.logo img {
+    height: 30px;
+    margin: 10px 0;
+}
+
+.history-bar {
+    font-size: 12px;
+    font-weight: 500;
+}
+.history-bar a {
+    text-decoration: none;
+    color: #000;
+}
+
+.navbar .navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .navbar-nav a {
+    display: flex;
+    align-items: center;
+    color: #222;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 10px;
+    font-size: 12px;
+}
+
+/* KONTEN */
+.konten {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 60px auto;
+    max-width: 900px;
+}
+
+@media screen and (min-width: 901px) {
+    .navbar-nav .active {
+        font-weight: bold;
+        color: coral;
+        border-bottom: 2px solid coral;
+        height: 30px;
+        padding-bottom: 10px;
+    }
+
+    .navbar .navbar-nav a:hover {
+        content: '';
+        display: block;
+        border-bottom: 2px solid coral;
+        padding-bottom: 10px;
+        transition: 0.2s;
+    }
+}
