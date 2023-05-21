@@ -15,14 +15,15 @@
 
 <body>
     <!-- Navbar -->
-    <nav id="navbar" class="navbar">
+    <nav id="navbar" class="navbar hidden">
         <div class="logo">
-            <a href="index.html"><img src="../../img/logo-famongskomik.png" alt="FamongsKomik">
+            <a href="../../index.html"><img src="../../img/logo-famongskomik.png" alt="FamongsKomik">
                 <h1>Famongs<span>Komik</span></h1>
             </a>
         </div>
         <div class="history-bar">
-            <p><a href="../../index.html">Beranda</a> > <a href="../martial-peak.html">Martial Peak</a> > <span>Chapter 1</span></p>
+            <p><a href="../../index.html">Beranda</a> > <a href="../martial-peak.html">Martial Peak</a> > <span>Chapter
+                    1</span></p>
         </div>
         <div class="navbar-nav">
             <a href="#">Layar Penuh</a>
@@ -32,10 +33,29 @@
 
     <section class="konten">
         <div id="image-container" class="chapter-1">
-            
+
         </div>
     </section>
 
+    <div id="navigation">
+        <button id="prevBtn"><ion-icon name="arrow-back-circle"></ion-icon></button>
+        <button id="nextBtn"><ion-icon name="arrow-forward-circle"></ion-icon></button>
+        <button id="chapterBtn"><ion-icon name="list"></ion-icon></button>
+    </div>
+
+    <div id="chapterList" style="display: none;">
+        <ul>
+            <li>Chapter 1</li>
+            <li>Chapter 2</li>
+            <li>Chapter 3</li>
+            <!-- Tambahkan daftar chapter lainnya -->
+        </ul>
+    </div>
+
+    <!-- icon -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../../js/baca.js"></script>
 </body>
-<script src="../../js/baca.js"></script>
+
 </html>

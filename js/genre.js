@@ -1,10 +1,20 @@
 // Ambil elemen-elemen yang dibutuhkan
 const urlParams = new URLSearchParams(window.location.search);
 const selectedGenre = urlParams.get('genre');
+var dropdownBtn = document.querySelector('.dropdown-btn');
+var dropdownContent = document.querySelector('.dropdown-content');
 const genreButtons = document.querySelectorAll('.genre-btn');
 const comicItems = document.querySelectorAll('.comic-items');
 const alphabets = document.querySelectorAll('.list-judul .alphabet');
 
+
+dropdownBtn.addEventListener('click', function () {
+    if (dropdownContent.style.display === 'none') {
+        dropdownContent.style.display = 'block';
+    } else {
+        dropdownContent.style.display = 'none';
+    }
+});
 // Tambahkan event listener pada setiap tombol genre
 genreButtons.forEach((button) => {
     button.addEventListener('click', (e) => {

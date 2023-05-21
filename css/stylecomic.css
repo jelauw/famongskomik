@@ -28,6 +28,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
+    transition: 0.3s;
     z-index: 999;
 }
 
@@ -58,6 +59,7 @@ body {
     font-size: 12px;
     font-weight: 500;
 }
+
 .history-bar a {
     text-decoration: none;
     color: #000;
@@ -79,6 +81,44 @@ body {
     font-size: 12px;
 }
 
+/* NAVIGASI BAWAH */
+#navigation {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  #chapterList {
+    position: fixed;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+    transition: bottom 0.3s ease;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #chapterList ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #chapterList ul li {
+    margin-bottom: 10px;
+  }
+  
+
+
+
 /* KONTEN */
 .konten {
     display: flex;
@@ -89,6 +129,19 @@ body {
     margin: 60px auto;
     max-width: 900px;
 }
+
+#image-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#image-container img {
+    width: 100%;
+    margin: 0;
+    /* Menghapus margin default */
+}
+
 
 @media screen and (min-width: 901px) {
     .navbar-nav .active {
