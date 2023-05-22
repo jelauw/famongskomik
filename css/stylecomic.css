@@ -28,12 +28,12 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    transition: 0.3s;
+    transition: top 0.3s ease;
     z-index: 999;
 }
 
 .navbar.hidden {
-    opacity: 0;
+    top: -50px;
     pointer-events: none;
 }
 
@@ -65,6 +65,10 @@ body {
     color: #000;
 }
 
+.history-bar span {
+    font-weight: 800;
+}
+
 .navbar .navbar-nav {
     display: flex;
     justify-content: center;
@@ -87,36 +91,81 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #f2f2f2;
+    background-color: #fff;
     padding: 10px;
-    text-align: center;
-  }
-  
-  #chapterList {
-    position: fixed;
-    bottom: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #f2f2f2;
-    padding: 10px;
-    text-align: center;
+    text-align: end;
+    z-index: 999;
     transition: bottom 0.3s ease;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  #chapterList ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  #chapterList ul li {
-    margin-bottom: 10px;
-  }
-  
+}
 
+#navigation.hidden {
+    bottom: -50px;
+    pointer-events: none;
+}
+
+#navigation ion-icon {
+    font-size: 1.5rem;
+    margin: 0 20px;
+    color: coral;
+}
+
+#navigation button {
+    flex-direction: row;
+}
+
+.hidden {
+    display: none;
+}
+
+.dropdown {
+    display: inline-block;
+    flex-direction: column;
+    top: 20px;
+    right: 20px;
+}
+
+.dropdown-btn {
+    background-color: #f1f1f1;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: medium;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 150px;
+    z-index: 1;
+    right: 0;
+}
+
+.dropdown-content ul {
+    padding: 10px 0;
+}
+.dropdown-content li {
+    display: flex;
+    justify-content: end;
+    padding: 5px 20px;
+    width: 100%;;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+.dropdown-content ul li a {
+    color: #000;
+}
+
+.dropdown .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 300px;
+    bottom: 100%;
+}
 
 
 /* KONTEN */
@@ -126,7 +175,7 @@ body {
     position: relative;
     background-color: #fff;
     border-radius: 10px;
-    margin: 60px auto;
+    margin: 50px auto;
     max-width: 900px;
 }
 
