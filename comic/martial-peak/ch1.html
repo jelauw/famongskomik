@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martial Peak Ch 1-FamongsKomik</title>
+    <title>Martial Peak Chapter 1-FamongsKomik</title>
     <link rel="stylesheet" href="../../css/stylecomic.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,8 +14,8 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav id="navbar" class="navbar hidden">
+    <!-- NAVIGASI -->
+    <nav id="navTop" class="navbar hidden">
         <div class="logo">
             <a href="../../index.html"><img src="../../img/logo-famongskomik.png" alt="FamongsKomik">
                 <h1>Famongs<span>Komik</span></h1>
@@ -31,17 +31,36 @@
         </div>
     </nav>
 
+    <div id="navBack" class="hidden">
+        <button id="backBtn">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+        </button>
+        <p>Chapter 1</p>
+        <button id="beranda">
+            <ion-icon name="home-outline"></ion-icon>
+        </button>
+        <button id="fullScreen">
+            <ion-icon name="expand-outline"></ion-icon>
+        </button>
+    </div>
+
     <section class="konten">
-        <div id="image-container" class="chapter-1">
+        <div id="image-container">
 
         </div>
     </section>
 
-    <div id="navigation" class="hidden">
-        <button id="prevBtn"><ion-icon name="arrow-back-circle"></ion-icon></button>
-        <button id="nextBtn"><ion-icon name="arrow-forward-circle"></ion-icon></button>
+    <div id="navBottom" class="hidden">
+        <button id="prevBtn">
+            <ion-icon name="arrow-back-circle"></ion-icon>
+        </button>
+        <button id="nextBtn">
+            <ion-icon name="arrow-forward-circle"></ion-icon>
+        </button>
         <div class="dropdown">
-            <button id="chapterBtn"><ion-icon name="list"></ion-icon></button>
+            <button id="chapterBtn">
+                <ion-icon name="list"></ion-icon>
+            </button>
             <div id="chapterList" class="dropdown-content" style="display: none;">
                 <ul>
                     <li><a href="ch1.html">Chapter 1</a></li>
@@ -51,7 +70,9 @@
                 </ul>
             </div>
         </div>
-        <a href="#" id="upBtn"><ion-icon name="arrow-up-circle"></ion-icon></a>
+        <a href="#" id="upBtn">
+            <ion-icon name="arrow-up-circle"></ion-icon>
+        </a>
     </div>
 
 
@@ -61,5 +82,8 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="../../js/baca.js"></script>
 </body>
+    <script>
+        loadImages('image-container', 'img-ch', 'Chapter 0001/Gambar ', 17, '.jpg');
+    </script>
 
 </html>

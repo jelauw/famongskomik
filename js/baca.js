@@ -1,179 +1,182 @@
-var navbar = document.getElementById('navbar');
-var isNavVisible = true;
-var timeout;
+// FITUR FULLSCREEN
+var fullscreenLink = document.querySelector('.navbar-nav a[href="#"]');
+fullscreenLink.addEventListener('click', toggleFullScreen);
 
-function hideNavbar() {
-  navbar.classList.add('hidden');
-  isNavVisible = false;
-}
-
-function showNavbar() {
-  navbar.classList.remove('hidden');
-  isNavVisible = true;
-}
-
-window.addEventListener('scroll', function() {
-  if (isNavVisible) {
-    hideNavbar();
-  }
-
-  clearTimeout(timeout);
-  timeout = setTimeout(function() {
-    if (!isNavVisible) {
-      hideNavbar();
+function toggleFullScreen() {
+    if (document.fullscreenElement) {
+        exitFullscreen();
+    } else {
+        enterFullscreen();
     }
-  }, 300);
-});
-
-document.addEventListener('click', function() {
-  if (!isNavVisible) {
-    showNavbar();
-  }
-});
-
-window.addEventListener('DOMContentLoaded', function() {
-  showNavbar();
-});
-window.addEventListener('scroll', function() {
-  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  if (scrollTop === 0) {
-    showNavbar();
-  } else {
-    hideNavbar();
-  }
-});
-
-
-
-var navigation = document.getElementById('navigation');
-var isNavVisible = true;
-var timeout;
-
-function hideNavigation() {
-  navigation.classList.add('hidden');
-  isNavVisible = false;
-}
-
-function showNavigation() {
-  navigation.classList.remove('hidden');
-  isNavVisible = true;
-}
-
-window.addEventListener('scroll', function() {
-  if (isNavVisible) {
-    hideNavigation();
-  }
-
-  clearTimeout(timeout);
-  timeout = setTimeout(function() {
-    if (!isNavVisible) {
-      hideNavigation();
-    }
-  }, 300);
-});
-
-document.addEventListener('click', function() {
-  showNavigation();
-});
-
-window.addEventListener('DOMContentLoaded', function() {
-  showNavigation();
-});
-
-window.addEventListener('scroll', function() {
-  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  if (scrollTop === 0) {
-    showNavigation();
-  } else {
-    hideNavigation();
-  }
-});
-
-
-
-var fullscreenButton = document.querySelector('a[href="#"]');
-fullscreenButton.addEventListener('click', toggleFullscreen);
-
-function toggleFullscreen() {
-  if (document.fullscreenElement) {
-    exitFullscreen();
-  } else {
-    enterFullscreen();
-  }
 }
 
 function enterFullscreen() {
-  var element = document.documentElement;
-  if (element.requestFullscreen) {
-    element.requestFullscreen();
-  } else if (element.mozRequestFullScreen) {
-    element.mozRequestFullScreen();
-  } else if (element.webkitRequestFullscreen) {
-    element.webkitRequestFullscreen();
-  } else if (element.msRequestFullscreen) {
-    element.msRequestFullscreen();
-  }
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari, Opera
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE/Edge
+        element.msRequestFullscreen();
+    }
 }
 
 function exitFullscreen() {
-  if (document.exitFullscreen) {
-    document.exitFullscreen();
-  } else if (document.mozCancelFullScreen) {
-    document.mozCancelFullScreen();
-  } else if (document.webkitExitFullscreen) {
-    document.webkitExitFullscreen();
-  } else if (document.msExitFullscreen) {
-    document.msExitFullscreen();
-  }
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari, Opera
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE/Edge
+        document.msExitFullscreen();
+    }
 }
 
+// NAVIGASI ATAS UNTUK KELUAR
+// Mendapatkan elemen-elemen yang diperlukan
+var navBack = document.getElementById('navBack');
+var backBtn = document.getElementById('backBtn');
+var berandaBtn = document.getElementById('beranda');
+var fullScreenBtn = document.getElementById('fullScreen');
 
-var chapterBtn = document.getElementById('chapterBtn');
-var chapterList = document.getElementById('chapterList');
-
-chapterBtn.addEventListener('click', function() {
-  chapterList.classList.toggle('show');
+// Menambahkan event listener ke tombol "Back"
+backBtn.addEventListener('click', function () {
+    window.location.href = 'martial-peak.html';
 });
 
+// Menambahkan event listener ke tombol "Beranda"
+berandaBtn.addEventListener('click', function () {
+    window.location.href = 'index.html';
+});
 
+// Menambahkan event listener ke tombol "FullScreen"
+fullScreenBtn.addEventListener('click', function () {
+    if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) {
+        document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) {
+        document.documentElement.webkitRequestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) {
+        document.documentElement.msRequestFullscreen();
+    }
+});
 
+// Mendapatkan elemen navigasi bawah
+var navBack = document.getElementById('navBack');
 
+// Menambahkan event listener ke document
+document.addEventListener('click', function (event) {
+    var targetElement = event.target;
 
-// UPLOAD IMAGE
-var imageContainer = document.getElementById('image-container');
+    // Mengecek apakah target element di luar navigasi bawah
+    if (!navBack.contains(targetElement)) {
+        // Toggle tampilan navigasi bawah
+        toggleNavBack();
+    }
+});
 
-var basePath = 'img-ch/Chapter 0001/Gambar '; // Base path atau URL gambar
-var imageCount = 17; // Jumlah gambar
-var imageExtension = '.jpg'; // Ekstensi gambar
-
-for (var i = 1; i <= imageCount; i++) {
-  var img = document.createElement('img');
-  img.src = basePath + i + imageExtension;
-  img.alt = 'Gambar ' + i;
-  imageContainer.appendChild(img);
+// Fungsi untuk menampilkan/menyembunyikan navigasi bawah
+function toggleNavBack() {
+    navBack.classList.toggle('hidden');
 }
 
 
 
+// NAVIGASI BAWAH
+// Mendapatkan elemen-elemen navigasi
+var navBottom = document.getElementById('navBottom');
 var prevBtn = document.getElementById('prevBtn');
 var nextBtn = document.getElementById('nextBtn');
 var chapterBtn = document.getElementById('chapterBtn');
 var chapterList = document.getElementById('chapterList');
+var upBtn = document.getElementById('upBtn');
 
-prevBtn.addEventListener('click', function() {
-  // Aksi saat tombol "Previous" diklik
-  // ...
+// Menambahkan event listener untuk tombol-tombol navigasi
+prevBtn.addEventListener('click', goToPreviousChapter);
+nextBtn.addEventListener('click', goToNextChapter);
+chapterBtn.addEventListener('click', toggleChapterList);
+upBtn.addEventListener('click', scrollToTop);
+
+// Fungsi untuk pergi ke chapter sebelumnya
+function goToPreviousChapter() {
+    var currentChapter = getCurrentChapter();
+    if (currentChapter > 1) {
+        var previousChapter = currentChapter - 1;
+        var previousChapterURL = 'ch' + previousChapter + '.html';
+        window.location.href = previousChapterURL;
+    }
+}
+
+// Fungsi untuk pergi ke chapter berikutnya
+function goToNextChapter() {
+    var currentChapter = getCurrentChapter();
+    var totalChapters = getTotalChapters();
+    if (currentChapter < totalChapters) {
+        var nextChapter = currentChapter + 1;
+        var nextChapterURL = 'ch' + nextChapter + '.html';
+        window.location.href = nextChapterURL;
+    }
+}
+
+// Fungsi untuk mendapatkan nomor chapter saat ini
+function getCurrentChapter() {
+    var currentURL = window.location.href;
+    var chapterRegex = /ch(\d+)\.html/;
+    var matches = currentURL.match(chapterRegex);
+    if (matches && matches.length > 1) {
+        return parseInt(matches[1]);
+    }
+    return 1;
+}
+
+// Fungsi untuk mendapatkan total chapter
+function getTotalChapters() {
+    var chapterItems = chapterList.querySelectorAll('ul li');
+    return chapterItems.length;
+}
+
+// Fungsi untuk menampilkan/menyembunyikan daftar chapter
+function toggleChapterList() {
+    chapterList.style.display = (chapterList.style.display === 'none') ? 'block' : 'none';
+}
+
+// Fungsi untuk menggulir ke bagian atas halaman
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Menambahkan event listener ke document
+document.addEventListener('click', function (event) {
+    var targetElement = event.target;
+
+    // Mengecek apakah target element di luar navigasi bawah
+    if (!navBottom.contains(targetElement)) {
+        // Toggle tampilan navigasi bawah
+        toggleNavBottom();
+    }
 });
 
-nextBtn.addEventListener('click', function() {
-  // Aksi saat tombol "Next" diklik
-  // ...
-});
+// Fungsi untuk menampilkan/menyembunyikan navigasi bawah
+function toggleNavBottom() {
+    navBottom.classList.toggle('hidden');
+}
 
-chapterBtn.addEventListener('click', function() {
-  if (chapterList.style.display === 'none') {
-    chapterList.style.display = 'block';
-  } else {
-    chapterList.style.display = 'none';
-  }
-});
+// KONTEN KOMIK
+function loadImages(imageContainerId, folderName, basePath, imageCount, imageExtension) {
+    var imageContainer = document.getElementById(imageContainerId);
+
+    for (var i = 1; i <= imageCount; i++) {
+        var img = document.createElement('img');
+        img.src = folderName + '/' + basePath + i + imageExtension;
+        img.alt = 'Gambar ' + i;
+        imageContainer.appendChild(img);
+    }
+}
