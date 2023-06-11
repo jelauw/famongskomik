@@ -17,16 +17,18 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
-            <a href="index.html"><img src="../img/logo-famongskomik.png" alt="FamongsKomik">
+            <a href="../index.html"><img src="../img/logo-famongskomik.png" alt="FamongsKomik">
                 <h1>Famongs<span>Komik</span></h1>
             </a>
         </div>
-        <div class="search">
-            <input type="text" placeholder="Pencarian...">
-            <button id="submit">
-                <ion-icon name="search"></ion-icon>
-            </button>
-        </div>
+        <form id="searchForm" action="list-komik.html">
+            <div class="search">
+                <input type="text" placeholder="Pencarian..." id="searchInput">
+                <button id="submit" type="submit">
+                    <ion-icon name="search"></ion-icon>
+                </button>
+            </div>
+        </form>
         <div class="navbar-nav">
             <a href="../index.html">
                 <ion-icon name="home"></ion-icon>Beranda
@@ -66,8 +68,8 @@
                     <a href="#" class="genre">Supernatural</a>
                 </div>
                 <div class="button-container">
-                    <button class="read-button">Mulai Baca</button>
-                    <button class="favorite-button">Tambah ke Favorit</button>
+                    <!-- <button id="read-button" class="read-button">Mulai Baca</button> -->
+                    <button class="btn-favorit" onclick="tambahKeFavorit()">Tambah ke Favorit</button>
                 </div>
             </div>
         </div>
@@ -76,34 +78,16 @@
             <p>Rilis: 2018</p>
             <p>Penulis: <a href="https://www.mangaupdates.com/author/f41tvgy/momo-iii">Momo (III)</a></p>
             <p>Penerbit: <a href="https://www.mangaupdates.com/author/nok5nt2/pikapi">Pipaki</a></p>
-            <p>Views: 0</p>
-            <p>Update Terakhir: 00/00/0000</p>
+            <!-- <p>Views: 0</p>
+            <p>Update Terakhir: 00/00/0000</p> -->
         </div>
         <div class="chapter-list">
             <div class="chapter-header">
                 <p>CHAPTER LIST</p>
             </div>
             <ul>
-                <li><a href="martial-peak/ch1.html">Ch 1</a></li>
-                <li><a href="ch2.html">Ch 2</a></li>
-                <li><a href="ch3.html">Ch 3</a></li>
-                <li><a href="ch4.html">Ch 4</a></li>
-                <li><a href="ch5.html">Ch 5</a></li>
-                <li><a href="ch6.html">Ch 6</a></li>
-                <li><a href="ch7.html">Ch 7</a></li>
-                <li><a href="ch8.html">Ch 8</a></li>
-                <li><a href="ch9.html">Ch 9</a></li>
-                <li><a href="ch10.html">Ch 10</a></li>
-                <li><a href="ch11.html">Ch 11</a></li>
-                <li><a href="ch12.html">Ch 12</a></li>
-                <li><a href="ch13.html">Ch 13</a></li>
-                <li><a href="ch14.html">Ch 14</a></li>
-                <li><a href="ch15.html">Ch 15</a></li>
-                <li><a href="ch16.html">Ch 16</a></li>
-                <li><a href="ch17.html">Ch 17</a></li>
-                <li><a href="ch18.html">Ch 18</a></li>
-                <li><a href="ch19.html">Ch 19</a></li>
-                <li><a href="ch20.html">Ch 20</a></li>
+                <li><a class="baca-chapter" href="martial-peak/ch1.html" data-judul="martial-peak.html">Ch 1</a></li>
+                <li><a class="baca-chapter" href="martial-peak/ch2.html" data-judul="martial-peak.html">Ch 2</a></li>
                 <!-- Tambahkan daftar chapter lainnya -->
             </ul>
         </div>
@@ -113,5 +97,6 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 <script src="../js/use-genre.js"></script>
+<script src="../js/script.js"></script>
 
 </html>

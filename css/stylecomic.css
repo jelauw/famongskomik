@@ -29,6 +29,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
+    z-index: 999;
 }
 
 .logo a {
@@ -79,7 +80,6 @@ body {
 
 /* NAVBOTTOM */
 #navBottom {
-    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -155,7 +155,7 @@ body {
     position: relative;
     background-color: #fff;
     border-radius: 10px;
-    margin: 60px auto;
+    margin: 0 auto;
     max-width: 900px;
 }
 
@@ -220,7 +220,8 @@ body {
         background-color: transparent;
     }
 
-    #beranda, #fullScreen {
+    #beranda,
+    #fullScreen {
         float: right;
     }
 
@@ -231,6 +232,15 @@ body {
 }
 
 @media only screen and (max-width: 500px) {
+    /* #navBack {
+        position: fixed;
+    } */
+
+    .hidden {
+        display: none;
+    }
+
+
     #navBottom {
         justify-content: space-between;
     }

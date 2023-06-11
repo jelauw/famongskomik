@@ -45,12 +45,12 @@ var fullScreenBtn = document.getElementById('fullScreen');
 
 // Menambahkan event listener ke tombol "Back"
 backBtn.addEventListener('click', function () {
-    window.location.href = 'martial-peak.html';
+    window.location.href = '../martial-peak.html';
 });
 
 // Menambahkan event listener ke tombol "Beranda"
 berandaBtn.addEventListener('click', function () {
-    window.location.href = 'index.html';
+    window.location.href = '../../index.html';
 });
 
 // Menambahkan event listener ke tombol "FullScreen"
@@ -79,13 +79,6 @@ document.addEventListener('click', function (event) {
         toggleNavBack();
     }
 });
-
-// Fungsi untuk menampilkan/menyembunyikan navigasi bawah
-function toggleNavBack() {
-    navBack.classList.toggle('hidden');
-}
-
-
 
 // NAVIGASI BAWAH
 // Mendapatkan elemen-elemen navigasi
@@ -163,11 +156,6 @@ document.addEventListener('click', function (event) {
         toggleNavBottom();
     }
 });
-
-// Fungsi untuk menampilkan/menyembunyikan navigasi bawah
-function toggleNavBottom() {
-    navBottom.classList.toggle('hidden');
-}
 
 // KONTEN KOMIK
 function loadImages(imageContainerId, folderName, basePath, imageCount, imageExtension) {

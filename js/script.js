@@ -92,24 +92,16 @@ tabButtons.forEach((button, index) => {
   button.addEventListener('click', () => handleTabClick(index));
 });
 
-// Set initial tab
-changeTab(activeTabIndex);
 
-function bukaHalaman() {
-  window.location.href = "comic/martial-peak.html";
-}
+// UNTUK FUNGSI MENGARAH KE CHAPTER
+document.querySelectorAll('.baca-chapter').forEach(function(link) {
+  link.addEventListener('click', function(event) {
+    event.preventDefault(); // Mencegah perilaku bawaan tautan
 
-function hapusData() {
-  if (confirm("Apakah Anda yakin ingin menghapus data?")) {
-    // Logika penghapusan data secara lokal
-    // Misalnya, jika data disimpan dalam array:
-    data = null;
-    console.log("Data berhasil dihapus.");
+    var komikId = link.dataset.komikId;
+    var chapterId = link.dataset.chapterId;
+    var urlChapter = 'chapter.html?komikId=' + komikId + '&chapterId=' + chapterId;
 
-    // Lakukan tindakan lain setelah penghapusan sukses
-  } else {
-    // Tidak melakukan apa-apa jika pengguna membatalkan
-  }
-}
-
-
+    window.location.href = urlChapter;
+  });
+});

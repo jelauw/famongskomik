@@ -21,12 +21,14 @@
                 <h1>Famongs<span>Komik</span></h1>
             </a>
         </div>
-        <div class="search">
-            <input type="text" placeholder="Pencarian...">
-            <button id="submit">
-                <ion-icon name="search"></ion-icon>
-            </button>
-        </div>
+        <!-- <form id="searchForm" action="list-komik.html">
+            <div class="search">
+                <input type="text" placeholder="Pencarian..." id="searchInput">
+                <button id="submit" type="submit">
+                    <ion-icon name="search"></ion-icon>
+                </button>
+            </div>
+        </form> -->
         <div class="navbar-nav">
             <a href="index.html">
                 <ion-icon name="home"></ion-icon>Beranda
@@ -50,7 +52,7 @@
                 <div class="tab-pane active" id="history">
                     <!-- Konten riwayat -->
                     <div class="list-riwayat">
-                        <div class="comic-view">
+                        <div class="comic-view" id="comicView" style="display: none;">
                             <div class="gambar">
                                 <a href="comic/martial-peak.html">
                                     <img src="img/cover-martialpeak.jpg" alt="Martial Peak">
@@ -60,8 +62,7 @@
                             <div class="informasi">
                                 <a href="#">
                                     <h4 class="judul">Martial Peak</h4>
-                                    <p class="baca">Sebelumnya chapter 1</p>
-                                    <p class="up-ch">Up ke chapter 2</p>
+                                    <p class="baca" id="infoChapter"></p>
                                 </a>
                             </div>
                         </div>
@@ -69,23 +70,22 @@
                 </div>
                 <div class="tab-pane" id="favorites">
                     <!-- Konten favorit -->
-                    <div class="daftar-favorit">
-                        <div class="comic-items">
-                                <div class="cover-container">
-                                    <a href="comic/martial-peak.html">
+                    <ul id="daftar-favorit">
+                        <!-- <div class="comic-items">
+                            <div class="cover-container">
+                                <a href="comic/martial-peak.html">
                                     <img src="img/cover-martialpeak.jpg" alt="Martial Peak">
                                 </a>
-                                    <div class="hover-overlay">
-                                        <button class="btn-baca" onclick="bukaHalaman()">Baca</button>
-                                        <button class="btn-hapus" onclick="hapusData()">Hapus</button>
-                                    </div>
+                                <div class="hover-overlay">
+                                    <button class="btn-baca" onclick="bukaHalaman()">Baca</button>
+                                    <button class="btn-hapus" onclick="hapusData()">Hapus</button>
                                 </div>
-                                <div class="tittle">
-                                    <h4 class="judul" target="text"><a href="comic/martial-peak.html">Martial Peak</a></h4>
-                                </div>
-                            
-                        </div>
-                    </div>
+                            </div>
+                            <div class="tittle">
+                                <h4 class="judul" target="text"><a href="comic/martial-peak.html">Martial Peak</a></h4>
+                            </div>
+                        </div> -->
+                    </ul>
                 </div>
             </div>
         </div>

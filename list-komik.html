@@ -21,12 +21,14 @@
                 <h1>Famongs<span>Komik</span></h1>
             </a>
         </div>
-        <div class="search">
-            <input type="text" placeholder="Pencarian...">
-            <button id="submit">
-                <ion-icon name="search"></ion-icon>
-            </button>
-        </div>
+        <!-- <form id="searchForm" action="list-komik.html">
+            <div class="search">
+                <input type="text" placeholder="Pencarian..." id="searchInput">
+                <button id="submit" type="submit">
+                    <ion-icon name="search"></ion-icon>
+                </button>
+            </div>
+        </form> -->
         <div class="navbar-nav">
             <a href="index.html">
                 <ion-icon name="home"></ion-icon>Beranda
@@ -42,7 +44,7 @@
 
     <section class="konten">
         <div class="konten-list">
-            <h2><span>Daftar</span> Komik</h2>
+            <h3><span>Daftar</span> Komik</h3>
             <div class="dropdown">
                 <button class="dropdown-btn">Genre <ion-icon name="chevron-down"></ion-icon></button>
                 <div class="dropdown-content" style="display: none;">
@@ -73,17 +75,20 @@
                 <p class="alphabet" data-genres="all">J</p>
                 <p class="alphabet" data-genres="all">K</p>
                 <p class="alphabet" data-genres="all">L</p>
-                <p class="alphabet" data-genres="all, action, adventure, fantasy, harem, martial arts, romance, sci-fi, shounen, supernatural">M</p>
+                <p class="alphabet"
+                    data-genres="all, action, adventure, fantasy, harem, martial arts, romance, sci-fi, shounen, supernatural">
+                    M</p>
                 <div class="daftar-komik">
-                    <div class="comic-items" data-genres="action, adventure, fantasy, harem, martial arts, romance, sci-fi, shounen, supernatural">
+                    <div class="comic-items"
+                        data-genres="action, adventure, fantasy, harem, martial arts, romance, sci-fi, shounen, supernatural">
                         <a href="comic/martial-peak.html">
                             <div class="cover-container">
                                 <img src="img/cover-martialpeak.jpg" alt="Martial Peak">
-                                <span class="views">
-                                    <ion-icon name="eye"></ion-icon>0</span>
+                                <!-- <span class="views">
+                                    <ion-icon name="eye"></ion-icon>0</span> -->
                             </div>
                             <div class="tittle">
-                                <h4 class="judul" target="text">Martial Peak</h4>
+                                <h4 class="judul" target="text" class="related-comic">Martial Peak</h4>
                             </div>
                         </a>
                     </div>
@@ -94,14 +99,16 @@
                 <p class="alphabet" data-genres="all">Q</p>
                 <p class="alphabet" data-genres="all">R</p>
                 <p class="alphabet" data-genres="all">S</p>
-                <p class="alphabet" data-genres="all, action, adventure, comedy, drama, fantasy, harem, martial arts, shounen">T</p>
+                <p class="alphabet"
+                    data-genres="all, action, adventure, comedy, drama, fantasy, harem, martial arts, shounen">T</p>
                 <div class="daftar-komik">
-                    <div class="comic-items" data-genres="action, adventure, comedy, drama, fantasy, harem, martial arts, shounen">
+                    <div class="comic-items"
+                        data-genres="action, adventure, comedy, drama, fantasy, harem, martial arts, shounen">
                         <a href="#">
                             <div class="cover-container">
                                 <img src="img/cover-talesofdemonsandgods.jpg" alt="tales of demons and gods">
-                                <span class="views">
-                                    <ion-icon name="eye"></ion-icon>0</span>
+                                <!-- <span class="views">
+                                    <ion-icon name="eye"></ion-icon>0</span> -->
                             </div>
                             <div class="tittle">
                                 <h4 class="judul" target="text">Tales of Demons and Gods</h4>

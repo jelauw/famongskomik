@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body>
@@ -31,7 +33,7 @@
         </div>
     </nav>
 
-    <div id="navBack" class="hidden">
+    <div id="navBack">
         <button id="backBtn">
             <ion-icon name="chevron-back-outline"></ion-icon>
         </button>
@@ -45,12 +47,12 @@
     </div>
 
     <section class="konten">
-        <div id="image-container">
+            <div id="image-container">
 
-        </div>
+            </div>
     </section>
 
-    <div id="navBottom" class="hidden">
+    <div id="navBottom">
         <button id="prevBtn">
             <ion-icon name="arrow-back-circle"></ion-icon>
         </button>
@@ -80,10 +82,11 @@
     <!-- icon -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="../../js/baca.js"></script>
 </body>
-    <script>
-        loadImages('image-container', 'img-ch', 'Chapter 0001/Gambar ', 17, '.jpg');
-    </script>
+<script src="../../js/baca.js"></script>
+<script src="../../js/scroll.js"></script>
+<script>
+    loadImages('image-container', 'img-ch', 'Chapter 0001/Gambar ', 17, '.jpg');
+</script>
 
 </html>
