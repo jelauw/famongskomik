@@ -168,3 +168,39 @@ function loadImages(imageContainerId, folderName, basePath, imageCount, imageExt
         imageContainer.appendChild(img);
     }
 }
+
+// NAVIGASI HIDDEN
+var navTop = document.getElementById('navTop');
+var isNavTopVisible = false;
+
+function showNavTop() {
+  navTop.style.opacity = '1';
+  navTop.style.pointerEvents = 'auto';
+  isNavTopVisible = true;
+}
+
+function hideNavTop() {
+  navTop.style.opacity = '0';
+  navTop.style.pointerEvents = 'none';
+  isNavTopVisible = false;
+}
+
+window.addEventListener('scroll', function() {
+  if (!isNavTopVisible && window.pageYOffset === 0) {
+    showNavTop();
+  } else if (isNavTopVisible && window.pageYOffset > 0) {
+    hideNavTop();
+  }
+});
+
+document.addEventListener('click', function() {
+  if (!isNavTopVisible) {
+    showNavTop();
+  }
+});
+
+navTop.addEventListener('click', function(event) {
+  event.stopPropagation();
+});
+
+
